@@ -1,9 +1,6 @@
-//
-//  FructusApp.swift
-//  Fructus
-//
-//  Created by  OYEBODE YUSUF AYODEJI on 8/7/23.
-//
+// FructusApp.swift
+// Copyright (c) 2023 YUMASH GLOBAL SERVICES
+// Created by HERYORDEJY on 8/7/23.
 
 import SwiftUI
 
