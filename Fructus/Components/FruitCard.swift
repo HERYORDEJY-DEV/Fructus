@@ -9,6 +9,8 @@ struct FruitCard: View {
     @State private var isAnimating: Bool = false
     @State private var scaleFactor = false
 
+//    var fruitModel: FruitModel
+
 //    BODY
     var body: some View {
         ZStack {
