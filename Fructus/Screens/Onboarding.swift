@@ -6,12 +6,13 @@ import SwiftUI
 
 struct Onboarding: View {
 //    PROPERTIES
+    var fruits: [FruitModel] = fruitsData
 
 //    BODY
     var body: some View {
         TabView {
-            ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { _ in
-                FruitCard()
+            ForEach(fruits[0 ... 5]) { fruit in
+                FruitCard(fruitModel: fruit)
             }
         }.tabViewStyle(PageTabViewStyle())
             .padding(.vertical, 20)

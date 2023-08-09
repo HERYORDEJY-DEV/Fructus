@@ -9,14 +9,14 @@ struct FruitCard: View {
     @State private var isAnimating: Bool = false
     @State private var scaleFactor = false
 
-//    var fruitModel: FruitModel
+    var fruitModel: FruitModel
 
 //    BODY
     var body: some View {
         ZStack {
             VStack {
 //                FRUIT IMAGE
-                Image("blueberry")
+                Image(fruitModel.image)
                     .resizable()
                     .clipped()
                     .scaledToFit()
@@ -24,13 +24,13 @@ struct FruitCard: View {
                     .scaleEffect(isAnimating ? 1.0 : 0.6, anchor: .center)
 
 //                TITLE
-                Text("Blueberry")
+                Text(fruitModel.title)
                     .foregroundColor(Color.white).font(.largeTitle)
                     .fontWeight(.heavy)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 2, x: 2, y: 2)
 
 //                HEADLINE
-                Text("Blueberries are sweet, nutritious and widly popular fruit all over the world.")
+                Text(fruitModel.headline)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
@@ -45,7 +45,7 @@ struct FruitCard: View {
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-        .background(LinearGradient(gradient: Gradient(colors: [Color("ColorBlueberryLight"), Color("ColorBlueberryDark")]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [fruitModel.gradientColors[0], fruitModel.gradientColors[1]]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
         .padding(.horizontal, 16)
     }
@@ -53,7 +53,7 @@ struct FruitCard: View {
 
 struct FruitCard_Previews: PreviewProvider {
     static var previews: some View {
-        FruitCard()
+        FruitCard(fruitModel: fruitsData[1])
         // .previewLayout(.fixed(width: .infinity, height: 640))
     }
 }
