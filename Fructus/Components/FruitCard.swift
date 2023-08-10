@@ -13,7 +13,7 @@ struct FruitCard: View {
 
 //    BODY
     var body: some View {
-        ZStack {
+        VStack {
             VStack {
 //                FRUIT IMAGE
                 Image(fruitModel.image)
